@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A GitHub action that appends an AWS Secret value(s) to a dotenv file",
   "main": "dist/index.js",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "build": "npx ncc build src/main.ts -o dist",
     "test": "npx jest"
