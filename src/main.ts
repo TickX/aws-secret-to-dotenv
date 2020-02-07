@@ -1,6 +1,7 @@
 import * as core from '@actions/core'
 import { SecretsManager } from "aws-sdk";
 import fs, { PathLike } from "fs";
+import dotenv, { DotenvParseOutput } from "dotenv";
 
 type SecretKey = string;
 type SecretValue = string;
@@ -15,7 +16,17 @@ const secretsManager = new SecretsManager({
 export const write = (key: SecretKey, value: SecretValue, to: PathLike) => {
     core.setSecret(value);
     core.exportVariable(key, value);
-    fs.appendFileSync(to, `${key}=${value}\n`);
+
+    let content: DotenvParseOutput = {[key]: value};
+    if (fs.existsSync(to)) {
+        content = {...dotenv.parse(fs.readFileSync(to)), ...content};
+    }
+
+    const envVars = Object.entries(content)
+        .map(([key, value]) => `${key}=${value}`)
+        .join('\n');
+
+    fs.writeFileSync(to, envVars);
 };
 
 export function run() {

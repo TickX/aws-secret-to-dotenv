@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@actions/core": "^1.2.2",
-    "aws-sdk": "^2.612.0"
+    "aws-sdk": "^2.612.0",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@types/jest": "^25.1.1",
