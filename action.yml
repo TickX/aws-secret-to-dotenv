@@ -1,0 +1,22 @@
+name: 'AWS Secret to Dotenv'
+description: 'Appends an AWS Secret value(s) to a dotenv file'
+inputs:
+  secret:
+    description: 'Name of secret to fetch'
+    required: true
+  key:
+    description: 'Name of key to fetch from secret'
+    required: false
+  as:
+    description: 'An alternative variable name for the key'
+    required: false
+  envPath:
+    description: 'File path to write secret to'
+    required: false
+    default: '.env'
+runs:
+  using: 'node12'
+  main: 'dist/main.js'
+branding:
+  icon: 'lock'
+  color: 'gray-dark'
