@@ -1,4 +1,5 @@
 ![](https://github.com/TickX/aws-secret-to-dotenv/workflows/Test/badge.svg)
+![GitHub license](https://img.shields.io/github/license/TickX/aws-secret-to-dotenv)
 
 # AWS Secret to Dotenv
 
