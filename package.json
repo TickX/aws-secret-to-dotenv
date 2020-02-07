@@ -2,7 +2,7 @@
   "name": "aws-secret-to-dotenv",
   "version": "1.0.0",
   "description": "A GitHub action that appends an AWS Secret value(s) to a dotenv file",
-  "main": "dist/main.js",
+  "main": "dist/index.js",
   "license": "ISC",
   "scripts": {
     "build": "npx ncc build src/main.ts -o dist",
